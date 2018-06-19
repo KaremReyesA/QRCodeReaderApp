@@ -35,7 +35,7 @@ import { EmailComposer } from '@ionic-native/email-composer';
     IonicModule.forRoot(MyApp),
     BrowserModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBEqKtJCsyLJBQibxDIdqqwd_KijpnchNc'
+      apiKey: 'AIzaSyDRzU8Hyz0gOQ_3OvKD7iLJbxL-F1NVzm4'
     })
   ],
   bootstrap: [IonicApp],
