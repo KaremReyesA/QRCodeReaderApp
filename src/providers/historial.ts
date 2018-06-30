@@ -129,6 +129,12 @@ export class HistorialService {
 
   private crear_contacto( texto:string ){
 
+    if( !this.platform.is('cordova') ){
+      this.crear_toast("Estoy en la computadora, no puedo crear contacto.");
+      console.warn("Estoy en la computadora, no puedo crear contacto.");
+      return;
+    }
+    else{
     let campos:any = this.parse_vcard( texto );
     console.log( campos );
 
@@ -136,10 +142,7 @@ export class HistorialService {
     let tel    = campos.tel[0].value[0];
 
 
-    if( !this.platform.is('cordova') ){
-      console.warn("Estoy en la computadora, no puedo crear contacto.");
-      return;
-    }
+    
 
     let contact: Contact = this.contacts.create();
 
@@ -151,7 +154,7 @@ export class HistorialService {
       (error) => this.crear_toast( "Error: " + error )
     );
 
-
+  }
   }
 
   private crear_toast( mensaje:string ){

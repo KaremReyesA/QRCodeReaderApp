@@ -46,6 +46,7 @@ export class HomePage {
 
 this.barcodeScanner.scan().then(barcodeData => {
       console.log('Barcode data', barcodeData);
+      this._historialService.agregar_historial(barcodeData.text);
      }).catch(err => {
          console.log('Error', err);
          this.mostrar_error('Error: '+err);
